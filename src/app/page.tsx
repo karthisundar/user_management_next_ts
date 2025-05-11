@@ -7,10 +7,25 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ email, password });
+  
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),  
+    });
+  
+    const data = await res.json();
+  
+    if (!res.ok) {
+      alert(data.error || 'Login failed');
+    } else {
+      alert('Login successful!');
+      // Redirect or store session here
+    }
   };
+  
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
