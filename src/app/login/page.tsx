@@ -2,6 +2,8 @@
 'use client'; 
 
 import { useState } from 'react';
+import mysql2 from 'mysql2';
+console.log('mysql2 loaded:', !!mysql2);
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -10,7 +12,7 @@ export default function LoginPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // You can replace this with actual auth logic
-    console.log({ email, password });
+    console.log({ email, password } );
   };
 
   return (

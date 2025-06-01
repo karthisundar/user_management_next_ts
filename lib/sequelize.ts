@@ -1,16 +1,18 @@
-// lib/sequelize.ts
-import { Sequelize } from 'sequelize';
+// // lib/sequelize.ts
+// // lib/sequelize.ts
+// import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME!,    
-  process.env.DB_USER!,    
-  process.env.DB_PASS!,     
-  {
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    dialect: 'mysql',       
-    logging: true,
-  }
-);
+// // Ensure mysql2 is installed in your project
+// const sequelize = new Sequelize(
+//   'user_management',     // database name
+//   'root',                // username
+//   'root',                // password
+//   {
+//     host: 'localhost',
+//     port: 3306,
+//     dialect: 'mysql',     // mysql requires 'mysql2' to be installed
+//     // logging: true,        // logs SQL queries to console
+//   }
+// );
 
-export default sequelize;
+// export default sequelize;
